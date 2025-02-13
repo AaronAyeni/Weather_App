@@ -136,14 +136,14 @@ when(weatherService.forecastByCity("City2")).thenReturn(cityInfo2);
 
 ### Test Coverage
 
-| Test Case | Description |
-|```````````|`````````````|
-| testCompareDaylightHours() | checks that daylight hour comparison logic correctly determines the city with longer daylight |
-| testCheckRain() | checks that which city is currently experiencing rain is correctly identified |
-| testForecastByCity() | checks that the forecast retrieval for each city is working |
-| testCompareDaylightHandlesInvalidCity() | checks that daylight comparison method correctly handles exception where a city isnt found |
-| testCheckRainWithBothCitiesRaining() | checks that checkRain method correctly handles case where both cities are experiencing rain |
-| testCheckRainWithNoRainInCities() | checks that checkRain method correctly handles case where both cities aren't experiencing rain |
+| Test Case                               | Description                                                                                    |
+|-----------------------------------------|------------------------------------------------------------------------------------------------|
+| testCompareDaylightHours()              | checks that daylight hour comparison logic  correctly determines the city with longer daylight |
+| testCheckRain()                         | checks that which city is currently experiencing rain is correctly identified                  |
+| testForecastByCity()                    | checks that the forecast retrieval for each city is working                                    |
+| testCompareDaylightHandlesInvalidCity() | checks that daylight comparison method correctly handles exception where a city isn't found    |
+| testCheckRainWithBothCitiesRaining()    | checks that checkRain method correctly handles case where both cities are experiencing rain    |
+| testCheckRainWithNoRainInCities()       | checks that checkRain method correctly handles case where both cities aren't experiencing rain |
 
 
 
