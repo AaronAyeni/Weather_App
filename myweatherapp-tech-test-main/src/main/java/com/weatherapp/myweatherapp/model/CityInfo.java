@@ -35,6 +35,9 @@ public class CityInfo {
 
     @JsonProperty("conditions")
     public String conditions;
+
+    public CurrentConditions() {
+    }
   }
 
   static class Days {

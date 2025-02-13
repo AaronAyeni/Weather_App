@@ -36,12 +36,13 @@ public class WeatherController {
       return ResponseEntity.badRequest().body("One or both cities could not be found.");
     }
 
-    LocalTime sunrise1 = LocalTime.parse(cityInfo1.currentConditions.sunrise, DateTimeFormatter.ofPattern("h:mm a"));
-    LocalTime sunset1 = LocalTime.parse(cityInfo1.currentConditions.sunset, DateTimeFormatter.ofPattern("h:mm a"));
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mm a", java.util.Locale.ENGLISH);
+    LocalTime sunrise1 = LocalTime.parse(cityInfo1.currentConditions.sunrise, formatter);
+    LocalTime sunset1 = LocalTime.parse(cityInfo1.currentConditions.sunset, formatter);
     long daylight1 = sunset1.toSecondOfDay() - sunrise1.toSecondOfDay();
 
-    LocalTime sunrise2 = LocalTime.parse(cityInfo2.currentConditions.sunrise, DateTimeFormatter.ofPattern("h:mm a"));
-    LocalTime sunset2 = LocalTime.parse(cityInfo2.currentConditions.sunset, DateTimeFormatter.ofPattern("h:mm a"));
+    LocalTime sunrise2 = LocalTime.parse(cityInfo2.currentConditions.sunrise, formatter);
+    LocalTime sunset2 = LocalTime.parse(cityInfo2.currentConditions.sunset, formatter);
     long daylight2 = sunset2.toSecondOfDay() - sunrise2.toSecondOfDay();
 
     String result = (daylight1 > daylight2) ? city1 : city2;
